@@ -1,0 +1,28 @@
+frameCount % 10 == 0 && pondStuffCount[i].type == KOI) {
+            switch (pondStuff[i].direction) {
+                case(DOWN):
+                pondStuff[i].y += pondStuff[i].dy;
+                pondStuff[i].x += pondStuff[i].dx;
+                if (pondStuff[i].x > 240) {pondStuff[i].direction = LEFT;}
+                if (pondStuff[i].y > 125) {pondStuff[i].direction = UP;}
+                break;
+                case(LEFT):
+                pondStuff[i].y += pondStuff[i].dy;
+                pondStuff[i].x -= pondStuff[i].dx;
+                if (pondStuff[i].y > 125) {pondStuff[i].direction = UP;}
+                if (pondStuff[i].x < 0) {pondStuff[i].direction = RIGHT;}
+
+                break;
+                case(RIGHT):
+                pondStuff[i].y -= pondStuff[i].dy;
+                pondStuff[i].x += pondStuff[i].dx;
+                if (pondStuff[i].x > 240) {pondStuff[i].direction = LEFT;}
+                if (pondStuff[i].y < 0) {pondStuff[i].direction = DOWN;}
+                break;
+                case(UP):
+                pondStuff[i].y -= pondStuff[i].dy;
+                pondStuff[i].x -= pondStuff[i].dx;
+                if (pondStuff[i].y < 0) {pondStuff[i].direction = DOWN;}
+                if (pondStuff[i].x < 0) {pondStuff[i].direction = RIGHT;}
+                
+                break;
